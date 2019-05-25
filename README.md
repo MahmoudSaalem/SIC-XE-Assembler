@@ -62,3 +62,16 @@
 |TIX m       |   3/4   |  2C    | X ← (X) + 1; (X) : (m..m+2)                 |
 |TIXR r1     |    2    |  B8    | X ← (X) + 1; (X) : (r1)                     |      
 |WD m        |   3/4   |  DC    | Device specified by (m) ← (A)[rightmost byte to device specified by m]|
+
+## Supported Directives
+  * START
+  * END
+  * BYTE
+  * WORD
+  * RESB
+  * RESW
+  * BASE
+  * NOBASE
+  * EQU
+  * ORG
+  * LTORG
