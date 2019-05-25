@@ -3,16 +3,13 @@ prog1    START   1000              comment
 Q1       LDA     BETA              comment
          LDS     GAMMA
 SSSS     ADDR    A,S               comment
-         STA     =W'123'
-SSS      MUL     =X'a024'
-         LTORG
-         LDA     =C'abnsgs'
-. ORG test
+SSS      MULR    A,S
          ORG     900
          SUBR    S,A
-. EQU test
+         STA     DELTA              mmm
+.This is a comment
 BETA     BYTE    x'3'
+GAMMA    WORD    6
 ALPHA    RESW    1
-GAMMA    WORD    88
-TST      EQU     ALPHA*2-BETA
+DELTA    RESW    1
          END     Q1
