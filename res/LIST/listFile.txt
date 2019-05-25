@@ -1,0 +1,55 @@
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+-_-_-_-_-_-_-_-_-_- S   T   A   R   T      O   F      P   A   S   S   1 -_-_-_-_-_-_-_-_-_-_-
+
+LINES       ADDRESS     LABEL       MNEMONIC    ADDR_MODE   OPERAND1    OPERAND2    COMMENTS
+0           .2345678_0123456_8901234567890123456                               
+1           1000        PROG1       START                   1000                    comment                         
+2           1000        Q1          LDA                     BETA                    comment                         
+3           1003                    LDS                     GAMMA                                                   
+4           1006        SSSS        ADDR                    A           S           comment                         
+5           1008                    STA                     =W'123'                                                 
+6           100B        SSS         MUL                     =X'A024'                                                
+7           100E                    LTORG                                                                           
+8           1011                    LDA                     =C'ABNSGS'                                              
+9           . ORG test                                                         
+10          1014                    ORG                     900                                                     
+11          0900                    SUBR                    S           A                                           
+12          . EQU test                                                         
+13          0902        BETA        BYTE                    X'3'                                                    
+14          0903        ALPHA       RESW                    1                                                       
+15          0906        GAMMA       WORD                    88                                                      
+16          0909        TST         EQU                     ALPHA*2-BETA                                            
+17          0909                    END                     Q1                                                      
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+-_-_-_-_-_-_-_-_-_- S   T   A   R   T      O   F      P   A   S   S   2 -_-_-_-_-_-_-_-_-_-_-
+
+LINES       Code      LC       Source Statement
+
+0                     .2345678_0123456_8901234567890123456                               
+1                     1000        PROG1       START                   1000                    comment                         
+
+                                        n=1    i=1    x=0    b=0    p=1    e=0
+2           32FFF8    1000        Q1          LDA                     BETA                    comment                         
+
+                                        n=1    i=1    x=0    b=0    p=1    e=0
+3           FFF2FF    1003                    LDS                     GAMMA                                                   
+4            F900     1006        SSSS        ADDR                    A           S           comment                         
+
+                                        n=1    i=1    x=0    b=0    p=1    e=0
+5           90040F    1008                    STA                     =W'123'                                                 
+
+                                        n=1    i=1    x=0    b=0    p=1    e=0
+6           200332    100B        SSS         MUL                     =X'A024'                                                
+7                     100E                    LTORG                                                                           
+
+                                        n=1    i=1    x=0    b=0    p=1    e=0
+8           FFF8FB    1011                    LDA                     =C'ABNSGS'                                              
+9                     . ORG test                                                         
+10                    1014                    ORG                     900                                                     
+11          4950      0900                    SUBR                    S           A                                           
+12                    . EQU test                                                         
+13          51A024    0902        BETA        BYTE                    X'3'                                                    
+14                    0903        ALPHA       RESW                    1                                                       
+15          2432FF    0906        GAMMA       WORD                    88                                                      
+16                    0909        TST         EQU                     2308                                                    
+17                    0909                    END                     Q1                                                      

@@ -4,14 +4,15 @@ Q1       LDA     BETA              comment
          LDS     GAMMA
 SSSS     ADDR    A,S               comment
          STA     =W'123'
-SSS      MULR    A,S
+SSS      MUL     =X'a024'
+         LTORG
          LDA     =C'abnsgs'
+. ORG test
+         ORG     900
          SUBR    S,A
-         ltorg
-         STA     DELTA              mmm
-.This is a comment
+. EQU test
 BETA     BYTE    x'3'
-GAMMA    WORD    6
 ALPHA    RESW    1
-DELTA    RESW    1
+GAMMA    WORD    88
+TST      EQU     ALPHA*2-BETA
          END     Q1
