@@ -1,6 +1,18 @@
 # SIC-XE Assembler
 
-## Supported Instructions
+## Sample runs
+* Sample Program
+<p align="center">
+  <img  src="https://user-images.githubusercontent.com/48100957/58388605-44ea6980-8021-11e9-933d-7934ec98b648.png">
+</p>
+
+* Object Code
+<p align="center">
+  <img  src="https://user-images.githubusercontent.com/48100957/58388675-128d3c00-8022-11e9-86b9-075fcca5e339.png">
+</p>
+
+
+### Supported Instructions
 |Mnemonic    |  Format | Opcode | Effect                                      |
 |----------- |  ------ | ------ | -------------------------------------       |
 |ADD m       |    3/4  |  18    | A ← (A) + (m..m+2)                          |
@@ -63,7 +75,7 @@
 |TIXR r1     |    2    |  B8    | X ← (X) + 1; (X) : (r1)                     |      
 |WD m        |   3/4   |  DC    | Device specified by (m) ← (A)[rightmost byte to device specified by m]|
 
-## Supported Directives
+### Supported Directives
   * START
   * END
   * BYTE
